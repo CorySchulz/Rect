@@ -1,0 +1,604 @@
+/* ========================================================================== *\
+	$BASE
+\* ========================================================================== */
+
+/**
+ * Reset base properties on all parent slot container elements to meet current
+ * design and development requirements.
+ *
+ * 1. Hide containers that are never used with current production needs.
+ * 2. Correct the width of all containers.  This should never be modified.
+ */
+
+.right_panel,
+#brand-rotator {
+	display: none; /* 1 */
+}
+
+body #content{ 	width: 1024px; }
+
+#content {
+	margin-bottom: 0;
+}
+
+#salebanner {
+	margin-top: 0;
+}
+
+#salebanner,
+.mid_panel.cont-department {
+	float: right;
+}
+
+#salebanner,
+.mid_panel.cont-department,
+.double_block_col.feature-spot,
+.equityarea,
+.eq_typeA,
+.eq_typeB,
+.eq_typeE,
+.typeE_eq1 {
+	width: 848px; /* 2 */
+
+}
+
+.mid_panel.cont-department{
+	z-index: inherit;
+}
+
+.marketing-spot1,
+.equityarea,
+.eq_typeA,
+.eq_typeB,
+.eq_typeE,
+.typeE_eq1 {
+	float: none;
+}
+
+.marketing-spot1,
+#bottom-right,
+.eq_typeA,
+.eq_typeB,
+.eq_typeE,
+.typeE_eq1 {
+	margin: 0;
+}
+
+/**
+ * Adjust the box sizing of all elements to use `border-box` to simplify how
+ * width and height are addressed when border, margin, and padding are used.
+ */
+
+.creative-slot *,
+.creative-slot *:before,
+.creative-slot *:after {
+	font-family: 'Gotham 4r', helvetica, arial, sans-serif;
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	        box-sizing: border-box;
+}
+
+/**
+ * Set default font color, family, size, weight, and line height.
+ */
+
+.creative-slot {
+	color: #333;
+	font-family: 'Gotham 4r', helvetica, arial, sans-serif;
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 1.5;
+}
+
+
+
+
+
+
+
+
+
+
+/* ========================================================================== *\
+	$HTML5-DISPLAY-DEFINITIONS
+\* ========================================================================== */
+
+/**
+ * 1. Correct `inline-block` display not defined in IE 8/9.
+ * 2. Normalize vertical alignment of `progress` in Chrome, Firefox, and Opera.
+ */
+
+.creative-slot audio,
+.creative-slot canvas,
+.creative-slot video {
+	display: inline-block; /* 1 */
+}
+
+.creative-slot progress {
+	vertical-align: middle; /* 2 */
+}
+
+
+
+
+
+
+
+
+
+
+/* ========================================================================== *\
+	$LINKS
+\* ========================================================================== */
+
+/**
+ * Remove the gray background color from active links in IE 10.
+ */
+
+a {
+	background-color: transparent;
+}
+
+/**
+ * Address missing `outline` for all browsers in global style sheet.
+ *
+ * 1. Improve readability when focused and also mouse hovered in all browsers.
+ * 2. Improve readability when active (i.e. when element was "clicked").
+ */
+
+a:focus {
+	outline: 1px dotted;
+	outline: auto 5px -webkit-focus-ring-color;
+}
+a:focus:hover {
+	outline: none; /* 1 */
+}
+a:active {
+	outline: none; /* 2 */
+}
+
+/**
+ * Address link display inconsistency in global style sheet.
+ */
+
+.creative-slot a {
+	color: #4791c5;
+	text-decoration: underline;
+}
+.creative-slot a:hover {
+	text-decoration: none;
+}
+
+
+
+
+
+
+
+
+
+
+/* ========================================================================== *\
+	$TYPOGRAPHY
+\* ========================================================================== */
+
+/**
+ * Address missing font weight values in global style sheet.
+ */
+.creative-slot strong,
+.creative-slot b {
+	font-family: 'Gotham 7r', helvetica, arial, sans-serif;
+	font-weight: normal;
+}
+
+/**
+ * Address missing font style in global style sheet.
+ */
+.creative-slot em,
+.creative-slot i {
+	font-style: italic;
+}
+
+/* = = = = = = = = = = = = = = = = = = = = = = = *\
+	$HEADERS
+\* = = = = = = = = = = = = = = = = = = = = = = = */
+
+.creative-slot h1,
+.creative-slot h2,
+.creative-slot h3,
+.creative-slot h4,
+.creative-slot h5,
+.creative-slot h6 {
+	font-family: 'Gotham 7r', helvetica, arial, sans-serif;
+	font-weight: normal;
+	color: #333;
+}
+
+.creative-slot h1 {
+	margin: 0.6875em 0;
+	font-size: 36px;
+}
+
+.creative-slot h2 {
+	margin: 0.8334em 0;
+	font-size: 28px;
+}
+
+.creative-slot h3 {
+	margin: 0.9em 0;
+	font-size: 24px;
+}
+
+.creative-slot h4 {
+	margin: 1.25em 0;
+	font-size: 20px;
+}
+
+.creative-slot h5 {
+	margin: 1.5em 0;
+	font-size: 18px;
+}
+
+.creative-slot h6 {
+	margin: 2.0em 0;
+	font-size: 16px;
+}
+
+/* = = = = = = = = = = = = = = = = = = = = = = = *\
+	$PARAGRAPHS
+\* = = = = = = = = = = = = = = = = = = = = = = = */
+
+.creative-slot p {
+	margin: 1.0em 0;
+}
+
+/* = = = = = = = = = = = = = = = = = = = = = = = *\
+	$TYPOGRAPHIC-STYLING
+\* = = = = = = = = = = = = = = = = = = = = = = = */
+
+.creative-slot abbr {
+	border-bottom: 1px dotted #888;
+	cursor: help;
+}
+
+.creative-slot cite {
+	font-style: italic;
+}
+
+.creative-slot sup {
+	font-size: smaller;
+	vertical-align: super;
+}
+
+.creative-slot sub {
+	font-size: small;
+	vertical-align: sub;
+}
+
+.creative-slot small {
+	font-size: smaller;
+}
+
+/* = = = = = = = = = = = = = = = = = = = = = = = *\
+	$FONT-FAMILIES
+\* = = = = = = = = = = = = = = = = = = = = = = = */
+
+.creative-slot .font--gotham-book,
+.creative-slot .font--gotham-medium,
+.creative-slot .font--gotham-bold,
+.creative-slot .font--gotham-black {
+	font-weight: normal;
+}
+
+.creative-slot .font--gotham-book {
+	font-family: 'Gotham 4r', helvetica, arial, sans-serif;
+}
+
+.creative-slot .font--gotham-medium {
+	font-family: 'Gotham SSm 5r', helvetica, arial, sans-serif;
+}
+
+.creative-slot .font--gotham-bold {
+	font-family: 'Gotham 7r', helvetica, arial, sans-serif;
+}
+
+.creative-slot .font--gotham-black {
+	font-family: 'Gotham 8r', helvetica, arial, sans-serif;
+}
+
+
+
+
+
+
+
+
+
+
+/* ========================================================================== *\
+	$LISTS
+\* ========================================================================== */
+
+/**
+ * Address "flattened" list styles applied in global style sheet.
+ */
+
+.creative-slot ol,
+.creative-slot ul {
+	display: block;
+	margin: 1.0em 0;
+	padding-left: 2.5em;
+}
+
+.creative-slot ul {
+	list-style-type: disc;
+}
+.creative-slot ol ol,
+.creative-slot ul ul {
+	margin: 0;
+}
+
+.creative-slot ol li,
+.creative-slot ul li {
+	list-style-type: inherit;
+}
+
+.creative-slot ol {
+	list-style-type: decimal;
+}
+
+.creative-slot li {
+	display: list-item;
+}
+
+/* = = = = = = = = = = = = = = = = = = = = = = = *\
+	$LIST-UNSTYLED
+\* = = = = = = = = = = = = = = = = = = = = = = = */
+
+.creative-slot .list--unstyled {
+	margin: 0;
+	padding-left: 0;
+	list-style-type: none;
+}
+
+/* = = = = = = = = = = = = = = = = = = = = = = = *\
+	$LIST-DEFINITION
+\* = = = = = = = = = = = = = = = = = = = = = = = */
+
+.creative-slot dt {
+	font-family: 'Gotham 7r', helvetica, arial, sans-serif;
+	font-weight: normal;
+}
+
+
+
+
+
+
+
+
+
+
+/* ========================================================================== *\
+	$IMAGES
+\* ========================================================================== */
+
+.creative-slot img {
+	float: none;
+}
+
+
+
+
+
+
+
+
+
+
+/* ========================================================================== *\
+	$FORM-ELEMENTS
+\* ========================================================================== */
+
+/**
+ * Address missing `outline` for all browsers in global style sheet.
+ */
+
+input:focus {
+	outline: 1px dotted;
+	outline: auto 5px -webkit-focus-ring-color;
+}
+input:focus:hover {
+	outline: none;
+}
+
+
+
+
+
+
+
+
+
+
+/* ========================================================================== *\
+	$BUTTON-ELEMENTS
+\* ========================================================================== */
+
+/**
+ * Address inappropriate styles applied to all buttons in global style sheet.
+ */
+
+.creative-slot button {
+	margin: 0;
+	border: 0;
+	padding: 0;
+	background-color: transparent;
+
+	line-height: 1;
+}
+.creative-slot button:focus {
+	outline: 1px dotted;
+	outline: auto 5px -webkit-focus-ring-color;
+}
+.creative-slot button:focus:hover {
+	outline: none;
+}
+
+/**
+ * Create an imitation button style that can be used globally.  Impossible to
+ * restore native look-and-feel to buttons after default properties have been
+ * modified.
+ */
+
+.creative-slot button,
+.creative-slot .button--faux-native {
+	float: none;
+
+	color: #333;
+	font-family: inherit;
+	font-size: inherit;
+	font-weight: 100;
+	line-height: normal;
+}
+
+.creative-slot .button--faux-native {
+	min-height: 15px;
+	margin: 2px;
+	border: 2px outset #f0f0f0;
+	padding: 3px 6px;
+	background: #f0f0f0;
+}
+.creative-slot .button--faux-native:active {
+	border-style: inset;
+}
+
+
+
+
+
+
+
+
+
+
+/* ========================================================================== *\
+	$IMAGE-REPLACEMENT
+\* ========================================================================== */
+
+/**
+ * Apply this class to any element to replace plain text with a background
+ * image.  This allows text to remain "visible" to screen readers.
+ */
+
+.creative-slot .ir {
+	overflow: hidden;
+	border: none;
+	background-color: transparent;
+
+	font: normal 0/0 sans-serif;
+	color: transparent;
+	text-shadow: none;
+}
+.creative-slot .ir:before {
+	content: '';
+	display: block;
+	width: 0;
+	height: 150%;
+}
+
+
+
+
+
+
+
+
+
+
+/* ========================================================================== *\
+	$ACCESSIBILITY
+\* ========================================================================== */
+
+/**
+ * Apply this class to any element that should be hidden visually, yet remain
+ * "visible" to screen readers.  Any element that has "display: none;" applied
+ * to it is actually hidden from all browsers, including screen readers.
+ */
+
+.creative-slot .visually-hidden {
+	overflow: hidden;
+	border: none;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	padding: 0;
+
+	position: absolute;
+
+	clip: rect( 0, 0, 0, 0 );
+}
+
+/**
+ * Extends the `.visually-hidden` class to allow the element to be focusable
+ * when navigated to via the keyboard: h5bp.com/p.
+ */
+
+.creative-slot .visually-hidden.focusable:active,
+.creative-slot .visually-hidden.focusable:focus {
+	overflow: visible;
+	width: auto;
+	height: auto;
+	margin: 0;
+	position: static;
+
+	clip: auto;
+}
+
+/**
+ * Hide visually and from screen readers, but maintain layout.
+ */
+
+.creative-slot .invisible {
+	visibility: hidden;
+}
+
+/**
+ * Hide visually and from screen readers.
+ */
+
+.creative-slot .hidden {
+	display: none;
+}
+
+
+
+
+
+
+
+
+
+
+/* ========================================================================== *\
+	$MISCELLANEOUS
+\* ========================================================================== */
+
+/* = = = = = = = = = = = = = = = = = = = = = = = *\
+	$SOFT-LINE-BREAK
+\* = = = = = = = = = = = = = = = = = = = = = = = */
+
+/**
+ * Apply this class to any element where the use of an actual `<br>` element is
+ * not desired, or is not technically possible.
+ */
+
+.creative-slot .sbr {
+	font-size: 1px;
+}
+
+	.creative-slot .sbr-after:after,
+	.creative-slot .sbr:after {
+		content: '\a';
+		white-space: pre;
+	}
