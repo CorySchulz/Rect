@@ -1,111 +1,7 @@
 
-/*
-
-Kohl's Grid Framework for scalable content.
-
-v0.4 - Released January 13, 2015. Change Log:
-
-- Updated the grid-nav-box class so it isn't necessary for the "box-bottom-text" hover effects.
-
-- Added "grid-box-black" for solid black boxes with white text
-
-- Added 801, 809, and 849 grid widths
-- Fixed some of the 12x* size values
-- Added multi-border short cuts
-
-		TOP:
-		.grid-wrapper .d-border-top,
-		.grid-wrapper .d-border-t,
-		.grid-wrapper .d-border-trb,
-		.grid-wrapper .d-border-tl,
-		.grid-wrapper .d-border-tr,
-		.grid-wrapper .d-border-tb,
-		.grid-wrapper .d-border-trl
-
-		RIGHT:
-		.grid-wrapper .d-border-right,
-		.grid-wrapper .d-border-r,
-		.grid-wrapper .d-border-rbl,
-		.grid-wrapper .d-border-trb,
-		.grid-wrapper .d-border-rl,
-		.grid-wrapper .d-border-tr,
-		.grid-wrapper .d-border-br,
-		.grid-wrapper .d-border-rb,
-		.grid-wrapper .d-border-trl
-
-		BOTTOM:
-		.grid-wrapper .d-border-bottom,
-		.grid-wrapper .d-border-b,
-		.grid-wrapper .d-border-tb,
-		.grid-wrapper .d-border-rbl,
-		.grid-wrapper .d-border-trb,
-		.grid-wrapper .d-border-bl,
-		.grid-wrapper .d-border-br,
-		.grid-wrapper .d-border-rb
-
-		LEFT:
-		.grid-wrapper .d-border-left,
-		.grid-wrapper .d-border-l,
-		.grid-wrapper .d-border-rbl,
-		.grid-wrapper .d-border-bl,
-		.grid-wrapper .d-border-tl,
-		.grid-wrapper .d-border-rl,
-		.grid-wrapper .d-border-trl
 
 
-
-
-
-v0.3 Change Log:
-- Added body{ margin: 0; padding: 0; } because I felt like it.
-- Moved .grid-wrapper-tablet and .grid-wrapper-mobile into gridcss-dev-mobile.css file
-   since we don't need it for production.
-- Created ".grid-wrapper-skava" class for deploying pages to skava.
-   It pretty much just sets the width of the grid-wrapper to 100%
-- Removed "float: right" from .grid-wrapper class and moved it to .grid-wrapper-804
-   since that's the only size that really needs it.
-- Added ".grid-wrapper .grid-content" to Font Helpers ("grid-font-white, grid-font-uppercase")
-   to make them more specific.
-- Added ".grid-marketing-equity" class for marketing equities on the bottom of pages.
-   HTML looks like this:
-	<a href="" class="grid-marketing-equity">
-		<img  class="marketing-equity-image" src="images/hp-20140905-mkequity-izod.jpg" />
-	</a>
-- Add the "grid-vct" class to a div and then use any element inside to vertically center text.
-   <div class="grid-vct">
-		<div>This text will be centered vertically and horizontally.</div>
-   </div>
-- Added hover effects classes for fonts and backgrounds:
-	.grid-wrapper .grid-hover-text-white:hover{		color: white; }
-	.grid-wrapper .grid-hover-text-black:hover{		color: black; }
-	.grid-wrapper .grid-hover-bg-white:hover{		background: white; }
-	.grid-wrapper .grid-hover-bg-black:hover{		background: black; }
-- Added new SEO css
-- Added line-height classes
-
-
-v0.2 Change Log:
-- Added .grid-wrapper class to multiple classes to be more specific
-- Added .grid-wrapper-1024 size for new header width
-- Added "float: none" to homepage widths so it centers properly on the page
-- Turned dev code into  asp includes
-
-v0.1 Change Log:
-
-*/
-
-
-
-
-
-/*  OVERRIDE NORMALIZE STYLES  */
-/*.grid-wrapper  a {	color: black;	}
-*/
-
-
-/*    FOR DECLARING THE WIDTH OF THE GRID WRAPPER    */
-
-
+/*! rect.css v 0.1 | MIT License | github.com/CorySchulz/Rect */
 
 
 /****************************************
@@ -119,7 +15,6 @@ v0.1 Change Log:
 	-moz-box-sizing: content-box;
 	box-sizing: content-box;
 	}
-
 
 
 /* 1024px is the standard size to design for */ 
@@ -258,8 +153,7 @@ v0.1 Change Log:
 
 
 /*   ALL OR NONE   */
-.grid-wrapper .d-border-all,
-.grid-wrapper .d-border-lbrt{		border: 1px solid #b7b7b7;			}
+.grid-wrapper .d-border-all{		border: 1px solid #b7b7b7;			}
 
 .grid-wrapper .d-border-none{ 		border: none !important;			}
 
@@ -737,29 +631,98 @@ v0.1 Change Log:
 
  	.grid-wrapper .grid-content{ 		width: 100%; 	}
 
- 	/* 	OVERRIDE DESKTOP BORDERS	*/
-	.grid-wrapper .d-border-top{		border: none;	}
-	.grid-wrapper .d-border-right{		border: none;	}
-	.grid-wrapper .d-border-bottom{		border: none;	}
-	.grid-wrapper .d-border-left{		border: none;	}
-	.grid-wrapper .d-border-br{			border: none;	}
-	.grid-wrapper .d-border-all{		border: none;	}
+ 	/* Remove desktop borders */
+	.grid-wrapper .d-border-top,
+	.grid-wrapper .d-border-t,
+	.grid-wrapper .d-border-trb,
+	.grid-wrapper .d-border-tl,
+	.grid-wrapper .d-border-tr,
+	.grid-wrapper .d-border-tb,
+	.grid-wrapper .d-border-trl
+	{		border-top:  none;		}
+
+	.grid-wrapper .d-border-right,
+	.grid-wrapper .d-border-r,
+	.grid-wrapper .d-border-rbl,
+	.grid-wrapper .d-border-trb,
+	.grid-wrapper .d-border-rl,
+	.grid-wrapper .d-border-tr,
+	.grid-wrapper .d-border-br,
+	.grid-wrapper .d-border-rb,
+	.grid-wrapper .d-border-trl
+	{		border-right:  none;	}
+
+	.grid-wrapper .d-border-bottom,
+	.grid-wrapper .d-border-b,
+	.grid-wrapper .d-border-tb,
+	.grid-wrapper .d-border-rbl,
+	.grid-wrapper .d-border-trb,
+	.grid-wrapper .d-border-bl,
+	.grid-wrapper .d-border-br,
+	.grid-wrapper .d-border-rb
+	{		border-bottom:  none;	}
+
+	.grid-wrapper .d-border-left,
+	.grid-wrapper .d-border-l,
+	.grid-wrapper .d-border-rbl,
+	.grid-wrapper .d-border-bl,
+	.grid-wrapper .d-border-tl,
+	.grid-wrapper .d-border-rl,
+	.grid-wrapper .d-border-trl
+	{		border-left:  none;	}
+
+	.grid-wrapper .d-border-all{		border: none;		}
 
 	/* 	ADD MOBILE BORDERS 	*/
-	.grid-wrapper .m-border-top{		border-top: 1px solid #b7b7b7;		}
-	.grid-wrapper .m-border-right{		border-right: 1px solid #b7b7b7;	}
-	.grid-wrapper .m-border-bottom{		border-bottom: 1px solid #b7b7b7;	}
-	.grid-wrapper .m-border-left{		border-left: 1px solid #b7b7b7;		}
-	.grid-wrapper .m-border-br{			border-right: 1px solid #b7b7b7;
-										border-bottom: 1px solid #b7b7b7;	}
+	.grid-wrapper .m-border-top,
+	.grid-wrapper .m-border-t,
+	.grid-wrapper .m-border-trb,
+	.grid-wrapper .m-border-tl,
+	.grid-wrapper .m-border-tr,
+	.grid-wrapper .m-border-tb,
+	.grid-wrapper .m-border-trl
+	{		border-top: 1px solid #b7b7b7;		}
+
+	.grid-wrapper .m-border-right,
+	.grid-wrapper .m-border-r,
+	.grid-wrapper .m-border-rbl,
+	.grid-wrapper .m-border-trb,
+	.grid-wrapper .m-border-rl,
+	.grid-wrapper .m-border-tr,
+	.grid-wrapper .m-border-br,
+	.grid-wrapper .m-border-rb,
+	.grid-wrapper .m-border-trl
+	{		border-right: 1px solid #b7b7b7;	}
+
+	.grid-wrapper .m-border-bottom,
+	.grid-wrapper .m-border-b,
+	.grid-wrapper .m-border-tb,
+	.grid-wrapper .m-border-rbl,
+	.grid-wrapper .m-border-trb,
+	.grid-wrapper .m-border-bl,
+	.grid-wrapper .m-border-br,
+	.grid-wrapper .m-border-rb
+	{		border-bottom: 1px solid #b7b7b7;	}
+
+	.grid-wrapper .m-border-left,
+	.grid-wrapper .m-border-l,
+	.grid-wrapper .m-border-rbl,
+	.grid-wrapper .m-border-bl,
+	.grid-wrapper .m-border-tl,
+	.grid-wrapper .m-border-rl,
+	.grid-wrapper .m-border-trl
+	{		border-left: 1px solid #b7b7b7;		}
+
+
+	/*   ALL OR NONE   */
 	.grid-wrapper .m-border-all{		border: 1px solid #b7b7b7;			}
-	.grid-wrapper .m-border-none{ 		border: none;						}
+
+	.grid-wrapper .m-border-none{ 		border: none !important;			}
 
 
-	.grid-wrapper .grid-d-display-none{		display: block;	}
-	.grid-wrapper .grid-m-display-none{		display: none;	}
 
-	/* It's possible something was hidden on desktop but not on mobile*/
+
+	/* It's possible something was hidden on desktop but not on mobile */
 	.grid-wrapper .d0x0 {		display: block;	}
 
 	/* 	ADD MOBILE SIZES	*/
