@@ -12,23 +12,7 @@
 	<!-- desktop code css -->
 	<link href="css/responsive-squares.css"			rel="stylesheet" type="text/css" media="screen" />
 
-	<!--
-
-	<link href="css/gridcss-dev-mobile.css"			rel="stylesheet" type="text/css" media="screen" id="mobile-dev-css" />
-	<link href="css/gridcss-dev.css"         		rel="stylesheet" type="text/css" media="screen" />
-
-	-->
-
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
-
-	<style>
-
-
-
-
-		
-
-	</style>
 
 </head>
 
@@ -37,8 +21,19 @@
 <!-- 	The entire grid is wrapped in a grid-wrapper and inside of that is the
 		grid-content div that contains all of the blocks in the grid.
 		The grid is split into 16 columns and they can be divided up however you want. -->
-<div class="grid-wrapper grid-wrapper-1024px">
+<div class="grid-wrapper grid-wrapper-100pct">
 <div class="grid-content">
+
+		<div class="grid-gap" ></div>
+
+		<div class="grid-box d16x1 m8x1">
+			<div class="box-content">
+				<br/>
+				Responsive Squares is a web framework for building sites with a responsive square layout.
+			</div>
+		</div>
+
+		<div class="grid-gap d0x0" ></div>
 
 <!--  	You can declare the size of the box by changing the css class values.
 		A class like d8x8 will give you a square block that's half the
@@ -87,13 +82,13 @@
 	<div class="grid-box d8x8 m8x4">
 		<div class="box-content">
 			
-			<div class="grid-box d8x8" style="background: #FFFF97">
+			<div class="grid-box d8x8 m4x4" style="background: #FFFF97">
 				<div class="box-content d-border-br">
 					<img src="http://photos2.meetupstatic.com/photos/event/d/7/5/a/600_443815130.jpeg" class="box-bg-image" alt="" />
 				</div>
 			</div>
 
-			<div class="grid-box d8x8" style="background: #FFFF50">
+			<div class="grid-box d8x8 m4x4" style="background: #FFFF50">
 				<a class="box-content d-border-br" href="www.google.com">
 					<img src="https://s3-media3.fl.yelpcdn.com/bphoto/Udc7nTR-15zdejRfHz3pbA/ls.jpg" class="box-bg-image" alt="" />
 					<div class="box-bottom-text">
@@ -132,13 +127,6 @@
 
 	<!-- 	Use the "grid-gap" class on a div to add a row of white space between
 			modules on the grid.  -->
-	<div class="grid-gap" ></div>
-
-	<div class="grid-box d16x1 m8x2"  style="background: #666">
-		<div class="box-content">
-		</div>
-	</div>
-
 	<div class="grid-gap" ></div>
 	
 	<div class="grid-hr" style="background: grey" ></div>
