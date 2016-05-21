@@ -2,7 +2,7 @@
 
 Rect is a front-end framework for easily assembling responsive pages in a responsive, rectangle layout.
 
-Rect allows you to declate the shape and size of each box for desktop and mobile states using a 16 column grid.
+Rect allows you to declate the shape and size of each box for desktop and mobile states using a 16 column grid for the desktop view and an 8 column grid for mobile.
 
 Rect supports dynamically responsive fonts so the text always scales relative to the size of the box. 
 
