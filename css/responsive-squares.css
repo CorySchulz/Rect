@@ -4,8 +4,11 @@
 Kohl's Grid Framework for scalable content.
 
 v0.4 - Released January 13, 2015. Change Log:
+
 - Updated the grid-nav-box class so it isn't necessary for the "box-bottom-text" hover effects.
+
 - Added "grid-box-black" for solid black boxes with white text
+
 - Added 801, 809, and 849 grid widths
 - Fixed some of the 12x* size values
 - Added multi-border short cuts
@@ -61,7 +64,7 @@ v0.3 Change Log:
    It pretty much just sets the width of the grid-wrapper to 100%
 - Removed "float: right" from .grid-wrapper class and moved it to .grid-wrapper-804
    since that's the only size that really needs it.
-- Added ".creative-slot.grid-wrapper .grid-content" to Font Helpers ("grid-font-white, grid-font-uppercase")
+- Added ".grid-wrapper .grid-content" to Font Helpers ("grid-font-white, grid-font-uppercase")
    to make them more specific.
 - Added ".grid-marketing-equity" class for marketing equities on the bottom of pages.
    HTML looks like this:
@@ -91,60 +94,24 @@ v0.1 Change Log:
 
 */
 
-#content .lp-mid_panel1.cont-branding.clearfix{
-	width: 1024px;
-}
 
-body{ margin: 0; padding: 0; }
+
 
 
 /*  OVERRIDE NORMALIZE STYLES  */
-.grid-wrapper  a {	color: black;	}
+/*.grid-wrapper  a {	color: black;	}
+*/
 
-a:hover, a:active{
-	color: inherit;
-	text-decoration: none;
-	}
 
 /*    FOR DECLARING THE WIDTH OF THE GRID WRAPPER    */
-.grid-wrapper-801{			width: 801px;	float: right;	}
-.grid-wrapper-801 .grid-content{	font-size: 78.222%;		}
-
-.grid-wrapper-804{			width: 804px;	float: right;	}
-.grid-wrapper-804 .grid-content{	font-size: 78.515%;		}
-
-.grid-wrapper-809{			width: 809px;	float: right;	}
-.grid-wrapper-809 .grid-content{	font-size: 79.003%;		}
-
-.grid-wrapper-844{			width: 844px;					}
-.grid-wrapper-844 .grid-content{	font-size: 82.421%;		}
-
-.grid-wrapper-848{			width: 848px;	float: right;	}
-.grid-wrapper-848 .grid-content{	font-size: 82.8125%;	}
-
-.grid-wrapper-849{			width: 849px;	float: right;	}
-.grid-wrapper-849 .grid-content{	font-size: 82.910%;		}
-
-.grid-wrapper-985{			width: 984px;	float: none !important;	}
-.grid-wrapper-985 .grid-content{	font-size: 96.093%;		}
-
-.grid-wrapper-1024{			width: 1024px;	float: none !important;	}
-.grid-wrapper-1024 .grid-content{	font-size: 100%;		}
 
 
 
-/* 	WE DON'T DECLARE A FONT-SIZE FOR THE GRID-CONTENT 
- 	BECAUSE THE JAVASCRIPT WILL DO THAT FOR US.   		*/
-.grid-wrapper-skava{
-	width: 100%;
-	position: relative;
-	margin: auto;
-	float: none;
-	z-index: 1000;
-	}
 
+/****************************************
+			BASIC GRID SKELETON
+/****************************************/
 
-/*    BASIC GRID STRUCTURE   */
 .grid-wrapper{
 	font-size: 16px;
 	position: relative;
@@ -154,16 +121,29 @@ a:hover, a:active{
 	}
 
 
+
+/* 1024px is the standard size to design for */ 
+.grid-wrapper-1024px{
+	width: 1024px; 
+	margin: auto;
+	}
+.grid-wrapper-1024px .grid-content{		font-size: 100%;	}
+
+.grid-wrapper-100pct{
+	width:100%;
+	}
+
 .grid-wrapper .grid-content{
 	width: 100%;
+	height: auto;
 	margin: 0;
 	padding: 0;
-	background: white;
+	background: transparent;
 	position: relative;
 	text-align: center;
-	font-family: 'Gotham 4r', Helvetica, Arial, sans-serif;
+	font-family: Helvetica, Arial, sans-serif;
 	line-height: normal;
-	float: right;
+	float: left;
 	}
 
 .grid-content .grid-box{
@@ -218,7 +198,7 @@ a:hover, a:active{
 	}
 
 /*    GRID COLOR BAR    */
-.grid-wrapper .grid-color-bar{
+.grid-wrapper .grid-hr{
 	display: block;
 	padding: 0;
 	margin: 0;
@@ -231,7 +211,12 @@ a:hover, a:active{
 	}
 
 
-/*   ADD BORDER TO A DIV */
+/****************************************
+			BORDER HELPERS
+			d- for desktop
+			m- for mobile
+/****************************************/
+
 .grid-wrapper .d-border-top,
 .grid-wrapper .d-border-t,
 .grid-wrapper .d-border-trb,
@@ -279,37 +264,41 @@ a:hover, a:active{
 .grid-wrapper .d-border-none{ 		border: none !important;			}
 
 
+
+/****************************************
+			BUTTON HELPERS
+			.box-bottom-button for bottom buttons
+			.box-bottom-text for bottom text
+/****************************************/
+
 /*   BOTTOM BUTTON CLASSES   */
 .grid-wrapper .box-bottom-button {
 	position: absolute;
 	display: block;
 	left: 0;
 	bottom: 0;
-	
 	width: 100%;
 	margin: 0;
 	padding: 2.1em 0;
-	border-top: none;
-	border-top: 1px solid rgba(0, 0, 0, .1);
+	border-top: 1px solid rgba(0, 0, 0, 0.1);
 
 	/* IE6-8 */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#26ffffff', endColorstr='#26ffffff',GradientType=0 ); 
-	background: rgba(255, 255, 255, .15);
+	background: rgba(255, 255, 255, .1);
 
-	color: white;
+	color: #fff;
 	text-transform: uppercase;
 	letter-spacing: 0.1em;
 	line-height: 100%;
 	font-size: 0.75em;
-	font-family: 'Gotham SSm 5r', 'Gotham 5r', Helvetica, Arial, sans-serif;
 	text-align: center;
 	text-decoration: none;
 
-	-webkit-transition: background .6s ease-out;
-	-moz-transition: background .6s ease-out;
-	-ms-transition: background .6s ease-out;
-	-o-transition: background .6s ease-out;
-	transition: background .6s ease-out;
+	-webkit-transition: background .4s ease-out;
+	-moz-transition: background .4s ease-out;
+	-ms-transition: background .4s ease-out;
+	-o-transition: background .4s ease-out;
+	transition: background .4s ease-out;
 
 	user-select: none;
 	-moz-user-select: none;
@@ -318,18 +307,13 @@ a:hover, a:active{
   	cursor: pointer;
 	}
 
-.grid-wrapper .box-bottom-button:hover,
+/*.grid-wrapper .box-bottom-button:hover,
 .grid-wrapper .box-bottom-button:active,
 .grid-wrapper .box-bottom-button:focus{
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#14000000', endColorstr='#14000000',GradientType=0 ); /* IE6-8 */
-	background: rgba(0, 0, 0, .08);
-	color: #fff;
-	}
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#14000000', endColorstr='#14000000',GradientType=0 ); 
+	background: rgba(0, 0, 0, 0.4);
+	}*/
 
-/*   BOTTOM TEXT HELPERS   */
-
-
-.grid-wrapper .grid-d-display-none{		display: none;	}
 
 .grid-wrapper .box-bottom-text,
 .grid-wrapper .box-bottom-text-white,
@@ -342,17 +326,19 @@ a:hover, a:active{
 	padding: 2.1em 0;
 	border: none;
 	background: transparent;
-	color: black;
+	color: #fff;
 	text-transform: uppercase;
 	font-size: .75em;
 	text-align: center;
-	font-family: 'Gotham SSm 5r', 'Gotham 5r', Helvetica, Arial, sans-serif;
+	letter-spacing: 0.1em;
+	line-height: 100%;
+	
 
-	-webkit-transition: background .6s ease-out;
-	-moz-transition: background .6s ease-out;
-	-ms-transition: background .6s ease-out;
-	-o-transition: background .6s ease-out;
-	transition: background .6s ease-out;
+	-webkit-transition: background .4s ease-out;
+	-moz-transition: background .4s ease-out;
+	-ms-transition: background .4s ease-out;
+	-o-transition: background .4s ease-out;
+	transition: background .4s ease-out;
 
 	user-select: none;
 	-moz-user-select: none;
@@ -362,18 +348,17 @@ a:hover, a:active{
 
 .grid-wrapper .box-bottom-text-two-lines {
 	padding: 1.46em 0;
-}
-
-
-
+	}
 
 .box-content .box-bottom-text-white{
 	color: black;
 	background: rgb(255,255,255);
 	background: rgba(255,255,255,0.8);
-}
+	}
 
-
+.grid-wrapper .box-bottom-button:hover,
+.grid-wrapper .box-bottom-button:active,
+.grid-wrapper .box-bottom-button:focus,
 .box-content:hover > .box-bottom-text-two-lines,
 .box-content:focus > .box-bottom-text-two-lines,
 .box-content:hover > a > .box-bottom-text-two-lines,
@@ -383,18 +368,18 @@ a:hover, a:active{
 .box-content:hover > a > .box-bottom-text,
 .box-content:focus > a > .box-bottom-text{
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#14000000', endColorstr='#14000000',GradientType=0 ); /* IE6-8 */
-	background: rgba(0,0,0,0.08);
-}
+	background: rgba(0,0,0,0.4);
+	}
 
 .box-content:hover > .box-bottom-text-white,
 .box-content:focus > .box-bottom-text-white{
 	background: rgb(255,255,255);
 	background: rgba(255,255,255,0.95);
-}
+	}
 
 
 /*  FLOATING BUTTON  */
-.grid-wrapper .box-float-button {
+.grid-wrapper .box-floating-button {
 	position: absolute;
 	left: 50%;
 	width: 50%;
@@ -407,8 +392,6 @@ a:hover, a:active{
 	text-transform: uppercase;
 	text-align: center;
 	font-size: 0.875em;
-	text-decoration: none;
-	font-family: 'Gotham SSm 5r', Helvetica, Arial, sans-serif;
 	-webkit-transition: background .6s ease-out;
 	-moz-transition: background .6s ease-out;
 	-ms-transition: background .6s ease-out;
@@ -431,31 +414,33 @@ a:hover, a:active{
 
 
 
-/*    FONT HELPERS    */
-.creative-slot.grid-wrapper .grid-content .grid-font-white{		color: white;				}
-.creative-slot.grid-wrapper .grid-content .grid-font-gray,
-.creative-slot.grid-wrapper .grid-content .grid-font-grey{		color: #808080;				}
-.creative-slot.grid-wrapper .grid-content .grid-font-black{		color: black;				}
-.creative-slot.grid-wrapper .grid-content .grid-font-uppercase{	text-transform: uppercase;	}
-.creative-slot.grid-wrapper .grid-content .grid-font-center{	text-align: center; 		}
-.creative-slot.grid-wrapper .grid-content .grid-font-left{		text-align: left; 			}
-.creative-slot.grid-wrapper .grid-content .grid-font-right{		text-align: right; 			}
-.creative-slot.grid-wrapper .grid-content .grid-font-underline,
-.creative-slot.grid-wrapper .grid-content .grid-font-ul{		text-decoration: underline; }
+					/*    FONT HELPERS    */
+.grid-wrapper .grid-content .grid-font-white{		color: white;				}
+.grid-wrapper .grid-content .grid-font-gray,
+.grid-wrapper .grid-content .grid-font-grey{		color: #808080;				}
+.grid-wrapper .grid-content .grid-font-black{		color: black;				}
 
-.grid-wrapper .gotham-normal { 			font-family: 'Gotham 4r', Helvetica, Arial, sans-serif;		}
-.grid-wrapper .gotham-medium{ 			font-family: 'Gotham 5r', Helvetica, Arial, sans-serif;		}
-.grid-wrapper .gotham-medium-mobile{ 	font-family: 'Gotham SSm 5r', Helvetica, Arial, sans-serif;	}
-.grid-wrapper .gotham-bold{ 			font-family: 'Gotham 7r', Helvetica, Arial, sans-serif;		}
-.grid-wrapper .gotham-black{ 			font-family: 'Gotham 8r', Helvetica, Arial, sans-serif;		}
+
+.grid-wrapper .grid-content .grid-font-center{		text-align: center; 		}
+.grid-wrapper .grid-content .grid-font-left{		text-align: left; 			}
+.grid-wrapper .grid-content .grid-font-right{		text-align: right; 			}
+
+.grid-wrapper .grid-content .grid-font-underline,
+.grid-wrapper .grid-content .grid-font-ul{		text-decoration: underline; }
+.grid-wrapper .grid-content .grid-font-uppercase,
+.grid-wrapper .grid-content .grid-font-uc{			text-transform: uppercase;	}
+
+.grid-wrapper .grid-font-normal { 			font-weight: bold;	}
+.grid-wrapper .grid-font-bold{ 				font-weight: normal	}
+
 
 /*    LINE-HEIGHT HELPERS    */
-.creative-slot.grid-wrapper .grid-content .grid-line-height110 { line-height:110% }
-.creative-slot.grid-wrapper .grid-content .grid-line-height120 { line-height:120% }
-.creative-slot.grid-wrapper .grid-content .grid-line-height130 { line-height:130% }
-.creative-slot.grid-wrapper .grid-content .grid-line-height140 { line-height:140% }
-.creative-slot.grid-wrapper .grid-content .grid-line-height150 { line-height:150% }
-.creative-slot.grid-wrapper .grid-content .grid-line-height160 { line-height:160% }
+/*.grid-wrapper .grid-content .grid-line-height110 { line-height:110% }
+.grid-wrapper .grid-content .grid-line-height120 { line-height:120% }
+.grid-wrapper .grid-content .grid-line-height130 { line-height:130% }
+.grid-wrapper .grid-content .grid-line-height140 { line-height:140% }
+.grid-wrapper .grid-content .grid-line-height150 { line-height:150% }
+.grid-wrapper .grid-content .grid-line-height160 { line-height:160% }*/
 
 
 /* 	ADD THE "grid-vertically-centered-text" CLASS TO A DIV
@@ -488,115 +473,113 @@ a:hover, a:active{
 .grid-wrapper .grid-box-black {	background: #000; color: white; }
 
 
-/*    SCALABLE FONT CLASSES    */
-.grid-wrapper .gotham8{			font-size: 0.5em	}
-.grid-wrapper .gotham9{			font-size: 0.5625em	}
-.grid-wrapper .gotham10{		font-size: 0.625em	}
-.grid-wrapper .gotham11{		font-size: 0.6875em	}
-.grid-wrapper .gotham12{		font-size: 0.75em	}
-.grid-wrapper .gotham13{		font-size: 0.8125em	}
-.grid-wrapper .gotham14{		font-size: 0.875em	}
-.grid-wrapper .gotham15{		font-size: 0.9375em	}
-.grid-wrapper .gotham16{		font-size: 1em		}
-.grid-wrapper .gotham17{		font-size: 1.0625em	}
-.grid-wrapper .gotham18{		font-size: 1.125em	}
-.grid-wrapper .gotham19{		font-size: 1.1875em	}
-.grid-wrapper .gotham20{		font-size: 1.25em	}
-.grid-wrapper .gotham21{		font-size: 1.3125em	}
-.grid-wrapper .gotham22{		font-size: 1.375em	}
-.grid-wrapper .gotham23{		font-size: 1.4375em	}
-.grid-wrapper .gotham24{		font-size: 1.5em	}
-.grid-wrapper .gotham26{		font-size: 1.625em	}
-.grid-wrapper .gotham28{		font-size: 1.75em	}
-.grid-wrapper .gotham30{		font-size: 1.875em	}
-.grid-wrapper .gotham32{		font-size: 2em		}
-.grid-wrapper .gotham34{		font-size: 2.125em	}
-.grid-wrapper .gotham36{		font-size: 2.25em	}
-.grid-wrapper .gotham38{		font-size: 2.375em	}
-.grid-wrapper .gotham40{		font-size: 2.5em	}
-.grid-wrapper .gotham42{		font-size: 2.625em	}
-.grid-wrapper .gotham44{		font-size: 2.75em	}
-.grid-wrapper .gotham46{		font-size: 2.875em	}
-.grid-wrapper .gotham48{		font-size: 3em		}
-.grid-wrapper .gotham50{		font-size: 3.125em	}
-.grid-wrapper .gotham52{		font-size: 3.25em	}
-.grid-wrapper .gotham54{		font-size: 3.375em	}
-.grid-wrapper .gotham56{		font-size: 3.5em	}
-.grid-wrapper .gotham58{		font-size: 3.625em	}
-.grid-wrapper .gotham60{		font-size: 3.75em	}
-.grid-wrapper .gotham62{		font-size: 3.875em	}
-.grid-wrapper .gotham64{		font-size: 4em		}
-.grid-wrapper .gotham66{		font-size: 4.125em	}
-.grid-wrapper .gotham68{		font-size: 4.25em	}
-.grid-wrapper .gotham70{		font-size: 4.375em	}
-.grid-wrapper .gotham72{		font-size: 4.5em	}
-.grid-wrapper .gotham74{		font-size: 4.625em	}
-.grid-wrapper .gotham76{		font-size: 4.75em	}
-.grid-wrapper .gotham78{		font-size: 4.875em	}
-.grid-wrapper .gotham80{		font-size: 5em		}
-.grid-wrapper .gotham82{		font-size: 5.125em	}
-.grid-wrapper .gotham84{		font-size: 5.25em	}
-.grid-wrapper .gotham86{		font-size: 5.375em	}
-.grid-wrapper .gotham88{		font-size: 5.5em	}
-.grid-wrapper .gotham90{		font-size: 5.625em	}
-.grid-wrapper .gotham92{		font-size: 5.75em	}
-.grid-wrapper .gotham94{		font-size: 5.875em	}
-.grid-wrapper .gotham96{		font-size: 6em		}
-.grid-wrapper .gotham98{		font-size: 6.125em	}
-.grid-wrapper .gotham100{		font-size: 6.25em	}
-.grid-wrapper .gotham102{		font-size: 6.375em	}
-.grid-wrapper .gotham104{		font-size: 6.5em	}
-.grid-wrapper .gotham106{		font-size: 6.625em	}
-.grid-wrapper .gotham108{		font-size: 6.75em	}
-.grid-wrapper .gotham110{		font-size: 6.875em	}
-.grid-wrapper .gotham112{		font-size: 7em		}
-.grid-wrapper .gotham114{		font-size: 7.125em	}
-.grid-wrapper .gotham116{		font-size: 7.25em	}
-.grid-wrapper .gotham118{		font-size: 7.375em	}
-.grid-wrapper .gotham120{		font-size: 7.5em	}
-.grid-wrapper .gotham122{		font-size: 7.625em	}
-.grid-wrapper .gotham124{		font-size: 7.75em	}
-.grid-wrapper .gotham126{		font-size: 7.875em	}
-.grid-wrapper .gotham128{		font-size: 8em		}
-.grid-wrapper .gotham130{		font-size: 8.125em	}
-.grid-wrapper .gotham132{		font-size: 8.25em	}
-.grid-wrapper .gotham134{		font-size: 8.375em	}
-.grid-wrapper .gotham136{		font-size: 8.5em	}
-.grid-wrapper .gotham138{		font-size: 8.625em	}
-.grid-wrapper .gotham140{		font-size: 8.75em	}
-.grid-wrapper .gotham142{		font-size: 8.875em	}
-.grid-wrapper .gotham144{		font-size: 9em		}
-.grid-wrapper .gotham146{		font-size: 9.125em	}
-.grid-wrapper .gotham148{		font-size: 9.25em	}
-.grid-wrapper .gotham150{		font-size: 9.375em	}
-.grid-wrapper .gotham152{		font-size: 9.5em	}
-.grid-wrapper .gotham154{		font-size: 9.625em	}
-.grid-wrapper .gotham156{		font-size: 9.75em	}
-.grid-wrapper .gotham158{		font-size: 9.875em	}
-.grid-wrapper .gotham160{		font-size: 10em		}
-.grid-wrapper .gotham162{		font-size: 10.125em	}
-.grid-wrapper .gotham164{		font-size: 10.25em	}
-.grid-wrapper .gotham166{		font-size: 10.375em	}
-.grid-wrapper .gotham168{		font-size: 10.5em	}
-.grid-wrapper .gotham170{		font-size: 10.625em	}
-.grid-wrapper .gotham172{		font-size: 10.75em	}
-.grid-wrapper .gotham174{		font-size: 10.875em	}
-.grid-wrapper .gotham176{		font-size: 11em		}
-.grid-wrapper .gotham178{		font-size: 11.125em	}
-.grid-wrapper .gotham180{		font-size: 11.25em	}
-.grid-wrapper .gotham182{		font-size: 11.375em	}
-.grid-wrapper .gotham184{		font-size: 11.5em	}
-.grid-wrapper .gotham186{		font-size: 11.625em	}
-.grid-wrapper .gotham188{		font-size: 11.75em	}
-.grid-wrapper .gotham190{		font-size: 11.875em	}
-.grid-wrapper .gotham192{		font-size: 12em		}
-.grid-wrapper .gotham194{		font-size: 12.125em	}
-.grid-wrapper .gotham196{		font-size: 12.25em	}
-.grid-wrapper .gotham198{		font-size: 12.375em	}
-.grid-wrapper .gotham200{		font-size: 12.5em	}
-
-
-
+/*    SCALABLE FONT CLASSES    *//*
+.grid-wrapper .grid-font-8{			font-size: 0.5em	}
+.grid-wrapper .grid-font-9{			font-size: 0.5625em	}
+.grid-wrapper .grid-font-10{		font-size: 0.625em	}
+.grid-wrapper .grid-font-11{		font-size: 0.6875em	}
+.grid-wrapper .grid-font-12{		font-size: 0.75em	}
+.grid-wrapper .grid-font-13{		font-size: 0.8125em	}
+.grid-wrapper .grid-font-14{		font-size: 0.875em	}
+.grid-wrapper .grid-font-15{		font-size: 0.9375em	}
+.grid-wrapper .grid-font-16{		font-size: 1em		}
+.grid-wrapper .grid-font-17{		font-size: 1.0625em	}
+.grid-wrapper .grid-font-18{		font-size: 1.125em	}
+.grid-wrapper .grid-font-19{		font-size: 1.1875em	}
+.grid-wrapper .grid-font-20{		font-size: 1.25em	}
+.grid-wrapper .grid-font-21{		font-size: 1.3125em	}
+.grid-wrapper .grid-font-22{		font-size: 1.375em	}
+.grid-wrapper .grid-font-23{		font-size: 1.4375em	}
+.grid-wrapper .grid-font-24{		font-size: 1.5em	}
+.grid-wrapper .grid-font-26{		font-size: 1.625em	}
+.grid-wrapper .grid-font-28{		font-size: 1.75em	}
+.grid-wrapper .grid-font-30{		font-size: 1.875em	}
+.grid-wrapper .grid-font-32{		font-size: 2em		}
+.grid-wrapper .grid-font-34{		font-size: 2.125em	}
+.grid-wrapper .grid-font-36{		font-size: 2.25em	}
+.grid-wrapper .grid-font-38{		font-size: 2.375em	}
+.grid-wrapper .grid-font-40{		font-size: 2.5em	}
+.grid-wrapper .grid-font-42{		font-size: 2.625em	}
+.grid-wrapper .grid-font-44{		font-size: 2.75em	}
+.grid-wrapper .grid-font-46{		font-size: 2.875em	}
+.grid-wrapper .grid-font-48{		font-size: 3em		}
+.grid-wrapper .grid-font-50{		font-size: 3.125em	}
+.grid-wrapper .grid-font-52{		font-size: 3.25em	}
+.grid-wrapper .grid-font-54{		font-size: 3.375em	}
+.grid-wrapper .grid-font-56{		font-size: 3.5em	}
+.grid-wrapper .grid-font-58{		font-size: 3.625em	}
+.grid-wrapper .grid-font-60{		font-size: 3.75em	}
+.grid-wrapper .grid-font-62{		font-size: 3.875em	}
+.grid-wrapper .grid-font-64{		font-size: 4em		}
+.grid-wrapper .grid-font-66{		font-size: 4.125em	}
+.grid-wrapper .grid-font-68{		font-size: 4.25em	}
+.grid-wrapper .grid-font-70{		font-size: 4.375em	}
+.grid-wrapper .grid-font-72{		font-size: 4.5em	}
+.grid-wrapper .grid-font-74{		font-size: 4.625em	}
+.grid-wrapper .grid-font-76{		font-size: 4.75em	}
+.grid-wrapper .grid-font-78{		font-size: 4.875em	}
+.grid-wrapper .grid-font-80{		font-size: 5em		}
+.grid-wrapper .grid-font-82{		font-size: 5.125em	}
+.grid-wrapper .grid-font-84{		font-size: 5.25em	}
+.grid-wrapper .grid-font-86{		font-size: 5.375em	}
+.grid-wrapper .grid-font-88{		font-size: 5.5em	}
+.grid-wrapper .grid-font-90{		font-size: 5.625em	}
+.grid-wrapper .grid-font-92{		font-size: 5.75em	}
+.grid-wrapper .grid-font-94{		font-size: 5.875em	}
+.grid-wrapper .grid-font-96{		font-size: 6em		}
+.grid-wrapper .grid-font-98{		font-size: 6.125em	}
+.grid-wrapper .grid-font-100{		font-size: 6.25em	}
+.grid-wrapper .grid-font-102{		font-size: 6.375em	}
+.grid-wrapper .grid-font-104{		font-size: 6.5em	}
+.grid-wrapper .grid-font-106{		font-size: 6.625em	}
+.grid-wrapper .grid-font-108{		font-size: 6.75em	}
+.grid-wrapper .grid-font-110{		font-size: 6.875em	}
+.grid-wrapper .grid-font-112{		font-size: 7em		}
+.grid-wrapper .grid-font-114{		font-size: 7.125em	}
+.grid-wrapper .grid-font-116{		font-size: 7.25em	}
+.grid-wrapper .grid-font-118{		font-size: 7.375em	}
+.grid-wrapper .grid-font-120{		font-size: 7.5em	}
+.grid-wrapper .grid-font-122{		font-size: 7.625em	}
+.grid-wrapper .grid-font-124{		font-size: 7.75em	}
+.grid-wrapper .grid-font-126{		font-size: 7.875em	}
+.grid-wrapper .grid-font-128{		font-size: 8em		}
+.grid-wrapper .grid-font-130{		font-size: 8.125em	}
+.grid-wrapper .grid-font-132{		font-size: 8.25em	}
+.grid-wrapper .grid-font-134{		font-size: 8.375em	}
+.grid-wrapper .grid-font-136{		font-size: 8.5em	}
+.grid-wrapper .grid-font-138{		font-size: 8.625em	}
+.grid-wrapper .grid-font-140{		font-size: 8.75em	}
+.grid-wrapper .grid-font-142{		font-size: 8.875em	}
+.grid-wrapper .grid-font-144{		font-size: 9em		}
+.grid-wrapper .grid-font-146{		font-size: 9.125em	}
+.grid-wrapper .grid-font-148{		font-size: 9.25em	}
+.grid-wrapper .grid-font-150{		font-size: 9.375em	}
+.grid-wrapper .grid-font-152{		font-size: 9.5em	}
+.grid-wrapper .grid-font-154{		font-size: 9.625em	}
+.grid-wrapper .grid-font-156{		font-size: 9.75em	}
+.grid-wrapper .grid-font-158{		font-size: 9.875em	}
+.grid-wrapper .grid-font-160{		font-size: 10em		}
+.grid-wrapper .grid-font-162{		font-size: 10.125em	}
+.grid-wrapper .grid-font-164{		font-size: 10.25em	}
+.grid-wrapper .grid-font-166{		font-size: 10.375em	}
+.grid-wrapper .grid-font-168{		font-size: 10.5em	}
+.grid-wrapper .grid-font-170{		font-size: 10.625em	}
+.grid-wrapper .grid-font-172{		font-size: 10.75em	}
+.grid-wrapper .grid-font-174{		font-size: 10.875em	}
+.grid-wrapper .grid-font-176{		font-size: 11em		}
+.grid-wrapper .grid-font-178{		font-size: 11.125em	}
+.grid-wrapper .grid-font-180{		font-size: 11.25em	}
+.grid-wrapper .grid-font-182{		font-size: 11.375em	}
+.grid-wrapper .grid-font-184{		font-size: 11.5em	}
+.grid-wrapper .grid-font-186{		font-size: 11.625em	}
+.grid-wrapper .grid-font-188{		font-size: 11.75em	}
+.grid-wrapper .grid-font-190{		font-size: 11.875em	}
+.grid-wrapper .grid-font-192{		font-size: 12em		}
+.grid-wrapper .grid-font-194{		font-size: 12.125em	}
+.grid-wrapper .grid-font-196{		font-size: 12.25em	}
+.grid-wrapper .grid-font-198{		font-size: 12.375em	}
+.grid-wrapper .grid-font-200{		font-size: 12.5em	}
+*/
 
 /* 0 X */
 .grid-wrapper .d0x0 { display: none; }
@@ -740,82 +723,96 @@ a:hover, a:active{
 
 
 
-/*   EQUITY HELPERS   */
 
-.grid-marketing-equity {
-	width: 49.999%;
-	float: left;
-	border-top: 7px solid #b5b4b4;
-	border-bottom: 7px solid #b5b4b4;
-	font-size: 0;
-	margin: 0 0 30px 0;
-}
-.grid-marketing-equity .marketing-equity-image{
-	width: 100%;
-}
+/***********   SHIFT TO MOBILE LAYOUT   **********/
 
-/*  ONLY WORKS ON HP TO MAKE THE MID-PANEL 1024 PX WIDE */
-.mid_panel {width: 1024px; }
+ @media only screen and (max-width: 768px) { 
+
+	.grid-wrapper{
+		min-width: 320px;
+		-moz-text-size-adjust: 100%;
+		-webkit-text-size-adjust: 100%;
+		-ms-text-size-adjust: 100%;
+		}
+
+ 	.grid-wrapper .grid-content{ 		width: 100%; 	}
+
+ 	/* 	OVERRIDE DESKTOP BORDERS	*/
+	.grid-wrapper .d-border-top{		border: none;	}
+	.grid-wrapper .d-border-right{		border: none;	}
+	.grid-wrapper .d-border-bottom{		border: none;	}
+	.grid-wrapper .d-border-left{		border: none;	}
+	.grid-wrapper .d-border-br{			border: none;	}
+	.grid-wrapper .d-border-all{		border: none;	}
+
+	/* 	ADD MOBILE BORDERS 	*/
+	.grid-wrapper .m-border-top{		border-top: 1px solid #b7b7b7;		}
+	.grid-wrapper .m-border-right{		border-right: 1px solid #b7b7b7;	}
+	.grid-wrapper .m-border-bottom{		border-bottom: 1px solid #b7b7b7;	}
+	.grid-wrapper .m-border-left{		border-left: 1px solid #b7b7b7;		}
+	.grid-wrapper .m-border-br{			border-right: 1px solid #b7b7b7;
+										border-bottom: 1px solid #b7b7b7;	}
+	.grid-wrapper .m-border-all{		border: 1px solid #b7b7b7;			}
+	.grid-wrapper .m-border-none{ 		border: none;						}
 
 
-/*  OLD SEO COPY BLOCK */
-#seo {
-  background:#fff;
-  display:none;
-  float:right;
-  margin:10px auto; 
-  position:relative; 
-  text-align: justify;  
-}
+	.grid-wrapper .grid-d-display-none{		display: block;	}
+	.grid-wrapper .grid-m-display-none{		display: none;	}
 
-.grid-wrapper-804 ~ #seo {  display:block;width: 804px; }
-.grid-wrapper-844 ~ #seo {  display:block;width: 844px; }
-.grid-wrapper-848 ~ #seo {  display:block;width: 848px; }
-.grid-wrapper-985 ~ #seo {  display:block;width: 984px; }
-.grid-wrapper-1024 ~ #seo {  display:block;width: 1024px; }
+	/* It's possible something was hidden on desktop but not on mobile*/
+	.grid-wrapper .d0x0 {		display: block;	}
 
-#seo .seo-block {
-  color:#000;
-  font-family:Helvetica,Arial,sans-serif;
-  font-weight:normal;
-  line-height:15px; 
-  margin:0 auto; 
-  padding:10px 0; 
-}
+	/* 	ADD MOBILE SIZES	*/
+    .grid-wrapper .m0x0{		display: none;	}
 
-#seo .seo-block h1,
-#seo .seo-block h2  {
-  border-bottom:1px solid #000;
-  color:#000; 
-  font-size:12px; 
-  font-weight:bold; 
-  margin-bottom:5px; 
-  padding:0 10px;
-}
-#seo .seo-block p {
-  font-size:11px;
-  font-weight:normal;
-  margin:0 0 8px; 
-  padding:0 10px; 
-}
+    	/* 1 X */
+	.grid-wrapper .m1x1{		width: 25%; } .grid-wrapper .m1x1:before{		padding-top: 100%;	} 
 
-#seo .seo-block a {
-  color:#000;
-  font-weight:normal;
-  text-decoration:underline; 
-}
+	/* 2 X */
+	.grid-wrapper .m2x1{		width: 25%; } .grid-wrapper .m2x1:before{ 		padding-top: 50%;	}
+	.grid-wrapper .m2x2{		width: 25%; } .grid-wrapper .m2x2:before{ 		padding-top: 100%;	}
+	.grid-wrapper .m2x3{		width: 25%; } .grid-wrapper .m2x3:before{ 		padding-top: 150%;	}
+	.grid-wrapper .m2x4{		width: 25%; } .grid-wrapper .m2x4:before{ 		padding-top: 200%;	}
+	.grid-wrapper .m2x5{		width: 25%; } .grid-wrapper .m2x5:before{		padding-top: 250%;	}
+	.grid-wrapper .m2x6{		width: 25%; } .grid-wrapper .m2x6:before{ 		padding-top: 300%;	}
+	.grid-wrapper .m2x7{		width: 25%; } .grid-wrapper .m2x7:before{		padding-top: 350%;	}
+	.grid-wrapper .m2x8{		width: 25%; } .grid-wrapper .m2x8:before{		padding-top: 400%;	}
 
-#seo .seo-block a:hover,
-#seo .seo-block a:focus {
-  color:#000;
-}
+	/* 4 X */
+	.grid-wrapper .m4x1{		width: 50%; } .grid-wrapper .m4x1:before{ 		padding-top: 25%;	}
+	.grid-wrapper .m4x2{		width: 50%; } .grid-wrapper .m4x2:before{ 		padding-top: 50%;	}
+	.grid-wrapper .m4x3{		width: 50%; } .grid-wrapper .m4x3:before{ 		padding-top: 75%;	}
+	.grid-wrapper .m4x4{		width: 50%; } .grid-wrapper .m4x4:before{ 		padding-top: 100%;	}
+	.grid-wrapper .m4x5{		width: 50%; } .grid-wrapper .m4x5:before{ 		padding-top: 125%;	}
+	.grid-wrapper .m4x6{		width: 50%; } .grid-wrapper .m4x6:before{ 		padding-top: 150%;	}
+	.grid-wrapper .m4x7{		width: 50%; } .grid-wrapper .m4x7:before{ 		padding-top: 175%;	}
+	.grid-wrapper .m4x8{		width: 50%; } .grid-wrapper .m4x8:before{ 		padding-top: 200%;	}
 
-/*  NEW SEO COPY BLOCK */
-.creative-slot .grid-seo { font-size:13px; margin:1.2em auto; text-align: left }
-.creative-slot .grid-seo--heading { border-bottom:1px solid #000; color: #000; font-family: 'Gotham 7r', Helvetica, Arial, sans-serif; font-size: 0.875em }
-.creative-slot .grid-seo--paragraph { color: #000; font-family: 'Gotham 4r', Helvetica, Arial, sans-serif; font-size: 0.875em; line-height:150% }
-.creative-slot .grid-seo--heading, .creative-slot .grid-seo--paragraph {margin:.5em 0; padding: 0 .8em}
-.creative-slot .grid-seo--link { color: #000; font-family: 'Gotham 4r', Helvetica, Arial, sans-serif }
-.creative-slot .grid-seo--link:hover, .creative-slot .grid-seo--link:focus { color:#000; text-decoration: underline; }
+	/* 8 X */
+	.grid-wrapper .m8x1{		width: 100%; } .grid-wrapper .m8x1:before{ 		padding-top: 12.5%;		}
+	.grid-wrapper .m8x2{		width: 100%; } .grid-wrapper .m8x2:before{ 		padding-top: 25%;		}
+	.grid-wrapper .m8x3{		width: 100%; } .grid-wrapper .m8x3:before{ 		padding-top: 37.5%;		}
+	.grid-wrapper .m8x4{		width: 100%; } .grid-wrapper .m8x4:before{ 		padding-top: 50%;		}
+	.grid-wrapper .m8x5{		width: 100%; } .grid-wrapper .m8x5:before{ 		padding-top: 62.5%;		}
+	.grid-wrapper .m8x6{		width: 100%; } .grid-wrapper .m8x6:before{ 		padding-top: 75%;		}
+	.grid-wrapper .m8x7{		width: 100%; } .grid-wrapper .m8x7:before{ 		padding-top: 87.5%;		}
+	.grid-wrapper .m8x8{		width: 100%; } .grid-wrapper .m8x8:before{ 		padding-top: 100%;		}
+	.grid-wrapper .m8x9{		width: 100%; } .grid-wrapper .m8x9:before{		padding-top: 112.5%;	}
+	.grid-wrapper .m8x10{		width: 100%; } .grid-wrapper .m8x10:before{		padding-top: 125%;		}
+	.grid-wrapper .m8x11{		width: 100%; } .grid-wrapper .m8x11:before{		padding-top: 137.5%;	}
+	.grid-wrapper .m8x12{		width: 100%; } .grid-wrapper .m8x12:before{		padding-top: 150%;		}
+	.grid-wrapper .m8x13{		width: 100%; } .grid-wrapper .m8x13:before{		padding-top: 162.5%;	}
+	.grid-wrapper .m8x14{		width: 100%; } .grid-wrapper .m8x14:before{		padding-top: 175%;		}
+	.grid-wrapper .m8x15{		width: 100%; } .grid-wrapper .m8x15:before{		padding-top: 187.5%;	}
+	.grid-wrapper .m8x16{		width: 100%; } .grid-wrapper .m8x16:before{		padding-top: 200%;		}
+	.grid-wrapper .m8x42{		width:100%;	 } .grid-wrapper .m8x42:before{		padding-top:473.6%;		}
+
+	.grid-wrapper .grid-gap{
+		height: 1em;
+		}
+
+	}
+
+
 
 
