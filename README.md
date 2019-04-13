@@ -7,5 +7,3 @@ Wrecked Angles allows you to declate the shape and size of each box for desktop 
 Wrecked Angles offers dynamically responsive fonts so the text always scales relative to the size of the box. 
 
 Wrecked Angles is only 21.2 KB when minimized, and 3.7 KB using gzip.  
-
-[Preview a page made with Wrecked Angles.](http://coryschulz.com/code/wreckedangles/)
